@@ -1,3 +1,4 @@
-import Build from "./build";
+import Build from './build';
+import Home from './home';
 
-export {Build}
+export { Build, Home };
