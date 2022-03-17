@@ -40,7 +40,7 @@ module.exports = {
         900: '#000026'
       },
       'blue-areatomic': {
-        50: '#b0ffff',
+        50: '#c4e6e6',
         100: '#a6ffff',
         200: '#9cfafd',
         300: '#92f0f3',
@@ -503,7 +503,10 @@ module.exports = {
       '4/6': '66.666667%',
       '5/6': '83.333333%',
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
+      // Custom height
+      'card-sm': '250px',
+      card: '450px'
     }),
     inset: (theme, { negative }) => ({
       auto: 'auto',
@@ -620,7 +623,9 @@ module.exports = {
       0: '0px',
       full: '100%',
       min: 'min-content',
-      max: 'max-content'
+      max: 'max-content',
+      // Custome minWidth
+      button: '150px'
     },
     objectPosition: {
       bottom: 'bottom',
@@ -867,7 +872,10 @@ module.exports = {
       full: '100%',
       screen: '100vw',
       min: 'min-content',
-      max: 'max-content'
+      max: 'max-content',
+      // Custom width
+      'card-sm': '450px',
+      card: '500px'
     }),
     zIndex: {
       auto: 'auto',
