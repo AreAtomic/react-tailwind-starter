@@ -9,7 +9,7 @@ export const CardWithoutImage = (props) => {
       <HeadingTwo color='text-blue-areatomic-500'>{props.heading}</HeadingTwo>
       <div className='mb-3'></div>
       <p className='text-white-areatomic-500 text-[17px]'>{props.text}</p>
-      <ButtonSecondary className='mx-0 mt-7'>Voir plus -></ButtonSecondary>
+      <ButtonSecondary className='mx-0 mt-7'>Voir plus -&gt;</ButtonSecondary>
     </div>
   );
 };
@@ -28,7 +28,7 @@ export const CardWithImage = (props) => {
       <div className='grid grid-cols-2 justify-items-start'>
         <ButtonPrimary className='mx-0'>Acheter</ButtonPrimary>
         <ButtonSecondary className='justify-items-start'>
-          Voir plus ->
+          Voir plus -&gt;
         </ButtonSecondary>
       </div>
     </div>

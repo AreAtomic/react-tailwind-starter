@@ -6,7 +6,7 @@ import planetSilver from '../../assets/planet-silver.png';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../../components/molecules';
 
-const Home = (props) => {
+const Produits = (props) => {
   // Animations
   const [styles, setStyles] = useState({
     rocket: {
@@ -136,4 +136,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default Produits;
