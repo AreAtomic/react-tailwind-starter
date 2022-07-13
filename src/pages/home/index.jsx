@@ -5,7 +5,8 @@ import planetGold from '../../assets/planet-gold.png';
 import planetSilver from '../../assets/planet-silver.png';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../../components/molecules';
-
+import { Link } from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
 const Home = (props) => {
   // Animations
   const [styles, setStyles] = useState({
@@ -81,24 +82,47 @@ const Home = (props) => {
       <div className='grid grid-cols-2 py-10 px-10'>
         {/* Left side */}
         <div className='w-3/4'>
+        <div className='mb-10'></div>
           <HeadingOne>
             Areatomic rend votre business <b>atomique</b>
           </HeadingOne>
-          <div className='mb-4'></div>
-          <CardWithoutImage
-            heading='Site sur mesure'
-            text='Création de site vitrine et de site e-commerce 100% personnalisé pour vous permttre de faiore décoller votre business.'
-          />
-          <div className='mb-2'></div>
+          <div className='mb-6'></div>
+          <div className='py-5'>
+          <HashLink
+              // example of custom scroll function using the scroll prop
+              scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+              to={'/services#sur-mesure'}
+            >
+              <CardWithoutImage
+                heading='Site sur mesure'
+                text='Création de site vitrine et de site e-commerce 100% personnalisé pour vous permettre de faiore décoller votre business.'
+              />
+            </HashLink>
+          </div>
+          <div className='py-1'>
+          <HashLink
+              // example of custom scroll function using the scroll prop
+              scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+              to={'/services#accompagnement-formation'}
+            >
           <CardWithoutImage
             heading='Formation & Apprentissage'
             text='Accompagnement des équipes techniques de votre entreprise pour fixer des axes de travail stratégiques pour faire évoluer vos produits.'
           />
-          <div className='mb-2'></div>
+          </HashLink>
+          </div>
+          <div className='py-5'>            
+          <HashLink
+              // example of custom scroll function using the scroll prop
+              scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+              to={'/services#outils'}
+            >
           <CardWithoutImage
             heading='Outils'
             text="Mise à disposition d'outils pour les développeurs: templates, cheatsheet."
           />
+          </HashLink>
+          </div>
         </div>
         {/* Right side */}
         <div className='relative h-screen'>

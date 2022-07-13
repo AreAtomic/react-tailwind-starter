@@ -5,11 +5,11 @@ import { HeadingTwo } from '../headings';
 
 export const CardWithoutImage = (props) => {
   return (
-    <div className='w-card max-h-card-sm bg-component-500 rounded px-4 py-7'>
+    <div className='w-card max-h-card-sm bg-component-500 rounded px-4 py-4'>
       <HeadingTwo color='text-blue-areatomic-500'>{props.heading}</HeadingTwo>
       <div className='mb-3'></div>
       <p className='text-white-areatomic-500 text-[17px]'>{props.text}</p>
-      <ButtonSecondary className='mx-0 mt-7'>Voir plus -&gt;</ButtonSecondary>
+      <ButtonSecondary className='mx-0 mt-4'>Voir plus -&gt;</ButtonSecondary>
     </div>
   );
 };
