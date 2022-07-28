@@ -5,8 +5,10 @@ import planetGold from '../../assets/planet-gold.png';
 import planetSilver from '../../assets/planet-silver.png';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../../components/molecules';
-import { Link } from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
+import { Footer } from '../../components/organisms';
+
+
 const Home = (props) => {
   // Animations
   const [styles, setStyles] = useState({
@@ -154,7 +156,9 @@ const Home = (props) => {
           />
         </div>
       </div>
+      
     </div>
+    <Footer/>
     </>
     
   );

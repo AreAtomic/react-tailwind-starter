@@ -5,6 +5,7 @@ import planetGold from '../../assets/planet-gold.png';
 import planetSilver from '../../assets/planet-silver.png';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../../components/molecules';
+import { Footer } from '../../components/organisms';
 
 const Connexion = (props) => {
   // Animations
@@ -131,6 +132,7 @@ const Connexion = (props) => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
     
   );
