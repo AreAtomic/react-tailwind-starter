@@ -8,6 +8,9 @@ import {
   HeadingSix
 } from './headings';
 import { CardWithoutImage, CardWithImage } from './card';
+import { NavbarLink } from './link/navbarLink';
+import { LienLogo } from './logo/logo';
+import { Connexion } from './connexion/connexion';
 
 export {
   ButtonPrimary,
@@ -19,5 +22,8 @@ export {
   HeadingFive,
   HeadingSix,
   CardWithoutImage,
-  CardWithImage
+  CardWithImage,
+  NavbarLink,
+  LienLogo,
+  Connexion
 };

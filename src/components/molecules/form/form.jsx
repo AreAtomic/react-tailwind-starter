@@ -1,5 +1,5 @@
 import React from "react";
-import {ButtonSecondary } from '../atoms/buttons';
+import {ButtonSecondary } from '../../atoms/buttons';
 
 export default class Form extends React.Component {
     constructor(props) {
