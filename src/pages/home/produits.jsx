@@ -4,7 +4,7 @@ import planetPurple from '../../assets/planet-purple.png';
 import planetGold from '../../assets/planet-gold.png';
 import planetSilver from '../../assets/planet-silver.png';
 import { useEffect, useState } from 'react';
-import { Navbar,Footer} from '../../components/molecules/index';
+import { Navbar,Footer} from '../../components/organisms/index';
 
 const Produits = (props) => {
   // Animations

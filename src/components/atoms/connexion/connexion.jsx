@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import { ButtonPrimary,ButtonSecondary } from '../../atoms/buttons';
+import { ButtonPrimary,ButtonSecondary } from '../buttons';
 
 export const Connexion = (props) => {
     const location = document.location.href

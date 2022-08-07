@@ -1,9 +1,15 @@
-import { Footer } from './footer/footer';
 import Form  from './form/form';
-import { Navbar } from './navbar/navbar';
+import {Contact}  from './contact/contact';
+import {Donnees}  from './donnees/donnees';
+import { Site } from './site/site';
+import { Reseaux } from './reseaux/reseaux';
+import { DernierArticle } from './dernierArticle/dernierArticle';
 
 export {
-  Footer,
+  Contact,
   Form,
-  Navbar
+  Donnees,
+  Site,
+  Reseaux,
+  DernierArticle
 };
