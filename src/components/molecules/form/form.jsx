@@ -75,7 +75,7 @@ export default class Form extends React.Component {
                         <ButtonSecondary>
                             <a
                                 href={
-                                    'mailto:aurelien@areatomic.com?cc=' +
+                                    'mailto:contact@areatomic.com?cc=' +
                                     this.state.expediteur +
                                     '&subject=' +
                                     this.state.sujet +
