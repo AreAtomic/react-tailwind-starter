@@ -1,7 +1,6 @@
 import { HeadingTwo } from '../../atoms/headings'
 
 export const Contact = (props) => {
-    const location = document.location.href
     return (
         <div id="contact">
             <div className="py-2">

@@ -1,13 +1,7 @@
 // TODO: Navbar
 import logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
-import {
-    HeadingTwo,
-    HeadingThree,
-    HeadingFour,
-    HeadingFive,
-    HeadingSix,
-} from '../../atoms/headings'
+import { HeadingFive } from '../../atoms/headings'
 import { ButtonPrimary, ButtonSecondary } from '../../atoms/buttons'
 
 export const Navbar = (props) => {

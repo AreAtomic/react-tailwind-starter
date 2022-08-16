@@ -1,10 +1,12 @@
 import { HeadingTwo } from '../../atoms/headings'
-import Form from '../../molecules/form/form'
-import { Contact } from '../../molecules/contact/contact'
-import { Donnees } from '../../molecules/donnees/donnees'
-import { Site } from '../../molecules/site/site'
-import { DernierArticle } from '../../molecules/dernierArticle/dernierArticle'
-import { Reseaux } from '../../molecules/reseaux/reseaux'
+import {
+    Contact,
+    Donnees,
+    Site,
+    DernierArticle,
+    Reseaux,
+    Form,
+} from '../../molecules'
 
 export const Footer = (props) => {
     return (

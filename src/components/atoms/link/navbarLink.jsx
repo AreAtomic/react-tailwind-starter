@@ -1,12 +1,5 @@
 import { Link } from 'react-router-dom'
-import {
-    HeadingTwo,
-    HeadingThree,
-    HeadingFour,
-    HeadingFive,
-    HeadingSix,
-} from '../headings'
-import { ButtonPrimary, ButtonSecondary } from '../buttons'
+import { HeadingFive } from '../headings'
 
 export const NavbarLink = (props) => {
     const location = document.location.href
