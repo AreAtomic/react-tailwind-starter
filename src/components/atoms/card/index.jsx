@@ -1,5 +1,6 @@
 import { ButtonPrimary, ButtonSecondary } from '../buttons'
 import { HeadingTwo } from '../headings'
+import arrow from '../../../assets/arrow-right.svg'
 
 // TODO: icon "->" sur bouton "Voir plus"
 
@@ -11,8 +12,13 @@ export const CardWithoutImage = (props) => {
             </HeadingTwo>
             <div className="mb-3"></div>
             <p className="text-white-areatomic-500 text-[17px]">{props.text}</p>
-            <ButtonSecondary className="mx-0 mt-4">
-                Voir plus -&gt;
+            <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
+                Voir plus{' '}
+                <img
+                    src={arrow}
+                    alt="Flèche voir plus, Areatomic sit web sur mesure"
+                    className="ml-2"
+                />
             </ButtonSecondary>
         </div>
     )
@@ -35,8 +41,13 @@ export const CardWithImage = (props) => {
             <div className="mb-10"></div>
             <div className="grid grid-cols-2 justify-items-start">
                 <ButtonPrimary className="mx-0">Acheter</ButtonPrimary>
-                <ButtonSecondary className="justify-items-start">
-                    Voir plus -&gt;
+                <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
+                    Voir plus{' '}
+                    <img
+                        src={arrow}
+                        alt="Flèche voir plus, Areatomic sit web sur mesure"
+                        className="ml-2"
+                    />
                 </ButtonSecondary>
             </div>
         </div>
