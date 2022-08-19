@@ -59,11 +59,11 @@ const Form = () => {
                         <a
                             href={
                                 'mailto:contact@areatomic.com?cc=' +
-                                this.state.expediteur +
+                                expediteur +
                                 '&subject=' +
-                                this.state.sujet +
+                                sujet +
                                 '&body=' +
-                                this.state.demande
+                                demande
                             }
                         >
                             Nous contacter
