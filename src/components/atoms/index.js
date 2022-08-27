@@ -7,10 +7,10 @@ import {
     HeadingFive,
     HeadingSix,
 } from './headings'
-import { CardWithoutImage, CardWithImage } from './card'
+import { CardWithoutImage, CardArticle, CardProduct } from './card'
 import { NavbarLink } from './link/NavbarLink'
-import { LienLogo } from './logo/logo'
-import { Connexion } from './connexion/connexion'
+import { LienLogo } from './logo/Logo'
+import { Connexion } from './connexion/Connexion'
 
 export {
     ButtonPrimary,
@@ -22,7 +22,8 @@ export {
     HeadingFive,
     HeadingSix,
     CardWithoutImage,
-    CardWithImage,
+    CardArticle,
+    CardProduct,
     NavbarLink,
     LienLogo,
     Connexion,

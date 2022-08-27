@@ -888,6 +888,8 @@ module.exports = {
             min: 'min-content',
             max: 'max-content',
             // Custom width
+            'card-article':'400px',
+            'card-product':'400px',
             'card-sm': '450px',
             card: '500px',
         }),

@@ -1,7 +1,8 @@
 import {
     ButtonPrimary,
     ButtonSecondary,
-    CardWithImage,
+    CardArticle,
+    CardProduct,
     CardWithoutImage,
     HeadingOne,
 } from '../../components/atoms'
@@ -20,7 +21,7 @@ const Build = () => {
                 text="Création de site vitrine et de site e-commerce 100% personnalisé pour vous permttre de faiore décoller votre business."
             />
             <div className="mb-2"></div>
-            <CardWithImage
+            <CardArticle
                 heading="Template React & Tailwind"
                 price={10.0}
                 text="Un template React.js & Tailwind CSS contenant tous les composants de bases."

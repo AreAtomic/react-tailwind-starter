@@ -1,4 +1,4 @@
-import { HeadingOne, CardWithoutImage } from '../../components/atoms'
+import { HeadingOne, CardWithoutImage, ButtonPrimary } from '../../components/atoms'
 import rocket from '../../assets/rocket-3d.png'
 import planetPurple from '../../assets/planet-purple.png'
 import planetGold from '../../assets/planet-gold.png'
@@ -6,6 +6,8 @@ import planetSilver from '../../assets/planet-silver.png'
 import { useEffect, useState } from 'react'
 import { Navbar, Footer } from '../../components/organisms/index'
 import { HashLink } from 'react-router-hash-link'
+import { LoopArticle, LoopProduct } from '../../components/molecules'
+
 
 const Home = (props) => {
     // Animations
@@ -76,7 +78,7 @@ const Home = (props) => {
 
     return (
         <>
-            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 px-5">
+            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 px-5 w-100">
                 <Navbar />
                 <div className="grid grid-cols-2 py-10 px-10">
                     {/* Left side */}
@@ -159,10 +161,48 @@ const Home = (props) => {
                         />
                     </div>
                 </div>
+                <section id="produits" className="py-10 px-10 hidden">
+                    <div className='flex'>
+                        <div >
+                            <HeadingOne>
+                                    Nos produits
+                            </HeadingOne>
+                        </div>
+                        <div className="px-20 py-2">
+                            <ButtonPrimary className="px-10">
+                                Voir tous nos produits
+                            </ButtonPrimary>
+                        </div> 
+                    </div>
+                    <div>
+                        <div id="listeProduits">
+                            <LoopProduct repetition="3"/>
+                        </div> 
+                    </div>
+                               
+                </section>
+                <section id="articles" className="py-10 px-10 hidden" >
+                    <div className='flex'>
+                        <div >
+                            <HeadingOne>
+                                    Actualité
+                            </HeadingOne>
+                        </div>
+                        <div className="px-20 py-2">
+                            <ButtonPrimary className="px-10">
+                                Voir tous nos articles
+                            </ButtonPrimary>
+                        </div> 
+                    </div>
+                    <div>
+                        <div id="listeArticle">
+                            <LoopArticle repetition="3"/>
+                        </div> 
+                    </div>
+                </section>
             </div>
             <Footer />
         </>
     )
 }
-
 export default Home

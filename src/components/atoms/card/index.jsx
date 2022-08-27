@@ -6,7 +6,7 @@ import arrow from '../../../assets/arrow-right.svg'
 
 export const CardWithoutImage = (props) => {
     return (
-        <div className="w-card max-h-card-sm bg-component-500 rounded px-4 py-4">
+        <div className="w-card-sm max-h-card-sm bg-component-500 rounded px-4 py-4">
             <HeadingTwo color="text-blue-areatomic-500">
                 {props.heading}
             </HeadingTwo>
@@ -24,9 +24,9 @@ export const CardWithoutImage = (props) => {
     )
 }
 
-export const CardWithImage = (props) => {
+export const CardProduct = (props) => {
     return (
-        <div className="w-card-sm bg-component-500 rounded px-4 py-7">
+        <div className="w-card-product bg-component-500 rounded px-4 py-7">
             <HeadingTwo color="text-blue-areatomic-500">
                 {props.heading}
             </HeadingTwo>
@@ -40,7 +40,37 @@ export const CardWithImage = (props) => {
             <p className="text-white-areatomic-500 text-[17px]">{props.text}</p>
             <div className="mb-10"></div>
             <div className="grid grid-cols-2 justify-items-start">
-                <ButtonPrimary className="mx-0">Acheter</ButtonPrimary>
+                <ButtonPrimary className="mx-0 mt-4 items-center justify-center">Acheter</ButtonPrimary>
+                <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
+                    Voir plus{' '}
+                    <img
+                        src={arrow}
+                        alt="Flèche voir plus, Areatomic sit web sur mesure"
+                        className="ml-2"
+                    />
+                </ButtonSecondary>
+            </div>
+        </div>
+    )
+}
+
+export const CardArticle = (props) => {
+    return (
+        <div className="w-card-article bg-component-500 rounded px-4 py-7">
+            <HeadingTwo color="text-blue-areatomic-500">
+                {props.heading}
+            </HeadingTwo>
+            <div className="mb-2"></div>
+            <img src={props.image} alt={props.alt} className="rounded-md" />
+            <div className="mb-2"></div>
+            <HeadingTwo color="text-blue-areatomic-500">
+                {props.title}
+            </HeadingTwo>
+            <div className="mb-2"></div>
+            <p className="text-white-areatomic-500 text-[17px]">{props.text}</p>
+            <div className="mb-10"></div>
+            <div className="grid grid-cols-2 justify-items-start">
+                <ButtonPrimary className="mx-0 mt-4 items-center justify-center">Lire</ButtonPrimary>
                 <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
                     Voir plus{' '}
                     <img

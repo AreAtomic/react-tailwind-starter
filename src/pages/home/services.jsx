@@ -120,7 +120,7 @@ const Services = (props) => {
                     </div>
                 </section>
                 <section id="outils">
-                    <div className="grid grid-cols-2 py-20 px-10 mb-32">
+                    <div className="grid grid-cols-2 py-20 px-10 ">
                         {/* Left side */}
                         <div className="xl:mt-32 lg:mt-20">
                             <HeadingOne>
