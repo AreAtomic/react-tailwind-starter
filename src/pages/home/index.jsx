@@ -83,11 +83,11 @@ const Home = (props) => {
                 <div className="grid grid-cols-2 py-10 px-10">
                     {/* Left side */}
                     <div className="w-3/4">
-                        <div className="mb-10"></div>
+                        <div className="mb-10"/>
                         <HeadingOne>
                             Areatomic rend votre business <b>atomique</b>
                         </HeadingOne>
-                        <div className="mb-6"></div>
+                        <div className="mb-6"/>
                         <div className="py-5">
                             <HashLink
                                 // example of custom scroll function using the scroll prop

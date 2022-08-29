@@ -2,7 +2,6 @@ import {
     ButtonPrimary,
     ButtonSecondary,
     CardArticle,
-    CardProduct,
     CardWithoutImage,
     HeadingOne,
 } from '../../components/atoms'

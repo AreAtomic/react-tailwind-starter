@@ -12,7 +12,7 @@ const Services = (props) => {
                 <section id="sur-mesure">
                     <div className="grid grid-cols-2 py-10 px-10">
                         {/* Left side */}
-                        <div className="xl:mt-32 lg:mt-20">
+                        <div className="mt-10">
                             <HeadingOne>
                                 Faites <b>décoller</b> votre business avec un
                                 site <b>sur mesure</b>
@@ -120,7 +120,7 @@ const Services = (props) => {
                     </div>
                 </section>
                 <section id="outils">
-                    <div className="grid grid-cols-2 py-20 px-10 ">
+                    <div className="grid grid-cols-2 py-20 px-10 mb-32">
                         {/* Left side */}
                         <div className="xl:mt-32 lg:mt-20">
                             <HeadingOne>
