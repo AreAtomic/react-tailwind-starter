@@ -1,44 +1,35 @@
 {
-    "name": "react-tailwind-project",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@tailwindcss/postcss7-compat": "^2.2.17",
-        "@testing-library/jest-dom": "^5.16.2",
-        "@testing-library/react": "^11.2.7",
-        "@testing-library/user-event": "^12.8.3",
-        "prettier": "^2.7.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-router-dom": "^6.2.2",
-        "react-router-hash-link": "^2.4.3",
-        "react-scripts": "5.0.0",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-        "web-vitals": "^1.1.2"
-    },
+    "name": "areatomic",
+    "version": "1.0.0",
+    "description": "Areatomic web site",
+    "main": "server.js",
     "scripts": {
-        "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "client-install": "npm install --prefix client",
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
     },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.8.6",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.3",
+        "concurrently": "^4.0.1",
+        "express": "^4.16.4",
+        "is-empty": "^1.2.0",
+        "jsonwebtoken": "^8.3.0",
+        "mongoose": "^5.3.11",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "redux-devtools-extension": "^2.13.9",
+        "validator": "^10.9.0",
+        "webpack": "^5.74.0"
     },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+    "devDependencies": {
+        "nodemon": "^2.0.19"
     }
 }
