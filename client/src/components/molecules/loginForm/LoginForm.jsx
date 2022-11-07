@@ -1,31 +1,30 @@
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { loginUser } from '../../../actions/authAction'
 import classnames from 'classnames'
 
-const LoginForm = () => {
-    const [errors,setError] = useState('');
-    const [inputValues, setInputValues] = useState({});
+const LoginForm = (login) => {
+    let navigate = useNavigate();
+    const [inputValues, setInputValues] = useState({})
+    const [error, setError] = useState({})
 
-    const componentWillReceiveProps = (nextProps) => {
-        console.log(nextProps)
-        if (nextProps.auth.isAuthenticated) {
-            this.props.history.push('/dashboard') // push user to dashboard when they login
+    const componentWillReceiveProps = (test) => {
+        if (login.auth.isAuthenticated) {
+            navigate('/dashboard') // push user to dashboard when they login
         }
-        if (nextProps.errors) {
-            this.setError({
-                errors: nextProps.errors,
+        if (login.errors) {
+            setError({
+                error: login.errors,
             })
         }
     }
 
     const onChange = (e) => {
-        const id = e.target.id;
-        const value = e.target.value;
-        setInputValues(values => ({...values, [id]: value}))
-        
+        const id = e.target.id
+        const value = e.target.value
+        setInputValues((values) => ({ ...values, [id]: value }))
     }
     const onSubmit = (e) => {
         e.preventDefault()
@@ -33,8 +32,9 @@ const LoginForm = () => {
             email: inputValues.email,
             password: inputValues.password,
         }
-        loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-    };
+        login.loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+        componentWillReceiveProps()
+    }
     return (
         <div className="container">
             <div style={{ marginTop: '4rem' }} className="row">
@@ -61,39 +61,38 @@ const LoginForm = () => {
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={inputValues.email||""}
-                                error={errors.error}
+                                value={inputValues.email || ''}
+                                error={login.errors}
                                 id="email"
                                 type="email"
                                 className={classnames('', {
                                     invalid:
-                                    errors.email || errors.emailnotfound,
-                                })
-                            }
+                                    login.errors.email || login.errors.emailnotfound,
+                                })}
                             />
                             <label htmlFor="email">Email</label>
                             <span className="red-text">
-                                {errors.email}
-                                {errors.emailnotfound}
+                                {login.errors.email}
+                                {login.errors.emailnotfound}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={inputValues.password||""}
-                                error={errors.error}
+                                value={inputValues.password || ''}
+                                error={login.errors.error}
                                 id="password"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                    errors.password ||
-                                    errors.passwordincorrect,
+                                    login.errors.password ||
+                                    login.errors.passwordincorrect,
                                 })}
                             />
                             <label htmlFor="password">Password</label>
                             <span className="red-text">
-                                {errors.password}
-                                {errors.passwordincorrect}
+                                {login.errors.password}
+                                {login.errors.passwordincorrect}
                             </span>
                         </div>
                         <div

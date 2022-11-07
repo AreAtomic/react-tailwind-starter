@@ -9,6 +9,10 @@ import {
     Register,
     Login,
 } from './pages'
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
+
 
 
 function App() {

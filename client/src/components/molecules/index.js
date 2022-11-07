@@ -8,5 +8,7 @@ import {LoopProduct} from './boucles/LoopProduct'
 import {LoopArticle} from './boucles/LoopArticle'
 import LoginForm from './loginForm/LoginForm'
 import RegisterForm from './registerTools/RegisterForm'
+import Dashboard from './dashboard/Dashboard'
+import PrivateRoute from './registerTools/RegisterForm'
 
-export { Contact, Form, Donnees, Site, Reseaux, DernierArticle, LoopProduct,LoopArticle,LoginForm,RegisterForm}
+export { Contact, Form, Donnees, Site, Reseaux, DernierArticle, LoopProduct,LoopArticle,LoginForm,RegisterForm,Dashboard,PrivateRoute}
