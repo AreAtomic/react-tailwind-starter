@@ -8,13 +8,15 @@ import classnames from 'classnames'
 const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errors,setError] = useState('');
 
     const componentWillReceiveProps = (nextProps) => {
+        console.log(nextProps)
         if (nextProps.auth.isAuthenticated) {
             this.props.history.push('/dashboard') // push user to dashboard when they login
         }
         if (nextProps.errors) {
-            this.setState({
+            this.setError({
                 errors: nextProps.errors,
             })
         }
@@ -30,8 +32,7 @@ const LoginForm = () => {
             password: password,
         }
         this.props.loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-    }
-
+    };
     return (
         <div className="container">
             <div style={{ marginTop: '4rem' }} className="row">
@@ -59,37 +60,37 @@ const LoginForm = () => {
                             <input
                                 onChange={onChange}
                                 value={(e) => setEmail(e.target.value)}
-                                error={componentWillReceiveProps.errors.email}
+                                error={(e) => setError(e.target.value)}
                                 id="email"
                                 type="email"
                                 className={classnames('', {
                                     invalid:
-                                    componentWillReceiveProps.errors.email || componentWillReceiveProps.errors.emailnotfound,
+                                    errors.email || errors.emailnotfound,
                                 })}
                             />
                             <label htmlFor="email">Email</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.email}
-                                {componentWillReceiveProps.errors.emailnotfound}
+                                {errors.email}
+                                {errors.emailnotfound}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
                                 value={(e) => setPassword(e.target.value)}
-                                error={componentWillReceiveProps.errors.password}
+                                error={(e) => setError(e.target.value)}
                                 id="password"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                    componentWillReceiveProps.errors.password ||
-                                    componentWillReceiveProps.errors.passwordincorrect,
+                                    errors.password ||
+                                    errors.passwordincorrect,
                                 })}
                             />
                             <label htmlFor="password">Password</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.password}
-                                {componentWillReceiveProps.errors.passwordincorrect}
+                                {errors.password}
+                                {errors.passwordincorrect}
                             </span>
                         </div>
                         <div

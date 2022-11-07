@@ -22,17 +22,19 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmedPassword, setConfirmedPassword] = useState('')
+    const [errors,setError] = useState('');
 
     
     const componentWillReceiveProps = (nextProps) => {
         if (nextProps.errors) {
-            this.setState({
+            this.setError({
                 errors: nextProps.errors,
             })
         }
     }
 
     const onChange = (e) => {
+        e.preventDefault()
         this.setState({ [e.target.id]: e.target.value })
     }
     const onSubmit = (e) => {
@@ -76,74 +78,70 @@ const RegisterForm = () => {
                             <input
                                 onChange={onChange}
                                 value={(e) => setName(e.target.value)}
-                                error={componentWillReceiveProps.errors.name}
+                                error={(e) => setError(e.target.value)}
                                 id="name"
                                 type="text"
                                 className={classnames('', {
                                     invalid:
-                                        componentWillReceiveProps.errors.name,
+                                        errors.name,
                                 })}
                             />
                             <label htmlFor="name">Name</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.name}
+                                {errors.name}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
                                 value={(e) => setEmail(e.target.value)}
-                                error={componentWillReceiveProps.errors.email}
+                                error={(e) => setError(e.target.value)}
                                 id="email"
                                 type="email"
                                 className={classnames('', {
                                     invalid:
-                                        componentWillReceiveProps.errors.email,
+                                        errors.email,
                                 })}
                             />
                             <label htmlFor="email">Email</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.email}
+                                {errors.email}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
                                 value={(e) => setPassword(e.target.value)}
-                                error={
-                                    componentWillReceiveProps.errors.password
-                                }
+                                error={(e) => setError(e.target.value)}
                                 id="password"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                        componentWillReceiveProps.errors
+                                        errors
                                             .password,
                                 })}
                             />
                             <label htmlFor="password">Password</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.password}
+                                {errors.password}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
                                 value={setConfirmedPassword}
-                                error={
-                                    componentWillReceiveProps.errors.password2
-                                }
+                                error={(e) => setError(e.target.value)}
                                 id="password2"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                        componentWillReceiveProps.errors
+                                        errors
                                             .password2,
                                 })}
                             />
                             <label htmlFor="password2">Confirm Password</label>
                             <span className="red-text">
-                                {componentWillReceiveProps.errors.password2}
+                                {errors.password2}
                             </span>
                         </div>
                         <div
