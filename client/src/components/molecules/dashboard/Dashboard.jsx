@@ -8,7 +8,7 @@ const  Dashboard =(dash)=> {
     e.preventDefault();
     dash.logoutUser();
   };
-  const user = dash.auth;
+  const user = dash.auth.user;
 return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">

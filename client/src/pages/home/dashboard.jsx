@@ -7,7 +7,7 @@ return (
   <>
    <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 px-5">
       <Navbar />
-      <DashboardPage/>
+      <Dashboard/>
       </div>
     <Footer/>
   </>

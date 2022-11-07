@@ -7,7 +7,7 @@ import { DashboardPage } from '../../../pages'
 const PrivateRoute = ({ auth, props }) => {
   console.log(auth.isAuthenticated)
     return auth.isAuthenticated === true ? (
-        <DashboardPage {...props} />
+        <DashboardPage />
     ) : (
         <Navigate to="/login" />
     )

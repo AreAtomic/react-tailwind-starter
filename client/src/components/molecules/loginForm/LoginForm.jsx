@@ -6,7 +6,16 @@ import { loginUser } from '../../../actions/authAction'
 import classnames from 'classnames'
 
 const LoginForm = (login) => {
+    
     let navigate = useNavigate();
+    
+    const componentDidMount=()=> {
+        // If logged in and user navigates to Login page, should redirect them to dashboard
+        if (login.auth.isAuthenticated) {
+          navigate("/dashboard");
+        }
+      }
+      componentDidMount()
     const [inputValues, setInputValues] = useState({})
     const [error, setError] = useState({})
 
@@ -20,6 +29,7 @@ const LoginForm = (login) => {
             })
         }
     }
+
 
     const onChange = (e) => {
         const id = e.target.id
@@ -127,4 +137,5 @@ const mapStateToProps = (state) => ({
     auth: state.auth,
     errors: state.errors,
 })
+
 export default connect(mapStateToProps, { loginUser })(LoginForm)

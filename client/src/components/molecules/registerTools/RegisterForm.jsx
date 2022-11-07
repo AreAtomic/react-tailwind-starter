@@ -20,6 +20,14 @@ const RegisterForm = (register) => {
     const [inputValues, setInputValues] = useState({})
     const [error, setError] = useState({})
     let navigate = useNavigate()
+
+    const componentDidMount=()=> {
+        // If logged in and user navigates to Login page, should redirect them to dashboard
+        if (register.auth.isAuthenticated) {
+          navigate("/dashboard");
+        }
+      }
+      componentDidMount()
     
     const componentWillReceiveProps = () => {
         if (register.errors) {
