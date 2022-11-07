@@ -5,7 +5,7 @@ export const LoopArticle = (props) => {
     const items = []
 
     for (let i = 0; i< repetition; i++) {
-        if(i%2==0){
+        if(i%2===0){
             items.push(<div key={i} className='py-10'><CardArticle heading="Test" image ="" alt="test" price="10" text="Test Texte"/></div>) 
         }
         else{

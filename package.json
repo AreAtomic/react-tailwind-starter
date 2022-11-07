@@ -23,11 +23,8 @@
         "mongoose": "^5.3.11",
         "passport": "^0.4.0",
         "passport-jwt": "^4.0.0",
-        "react-router": "^5.2.0",
-        "react-router-dom": "^5.2.0",
-        "redux-devtools-extension": "^2.13.9",
-        "validator": "^10.9.0",
-        "webpack": "^5.74.0"
+        "react-router-dom": "^6.4.3",
+        "validator": "^10.9.0"
     },
     "devDependencies": {
         "nodemon": "^2.0.19"
