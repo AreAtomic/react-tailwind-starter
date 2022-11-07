@@ -6,9 +6,8 @@ import { loginUser } from '../../../actions/authAction'
 import classnames from 'classnames'
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
     const [errors,setError] = useState('');
+    const [inputValues, setInputValues] = useState({});
 
     const componentWillReceiveProps = (nextProps) => {
         console.log(nextProps)
@@ -23,15 +22,18 @@ const LoginForm = () => {
     }
 
     const onChange = (e) => {
-        this.setState({ [e.target.id]: e.target.value })
+        const id = e.target.id;
+        const value = e.target.value;
+        setInputValues(values => ({...values, [id]: value}))
+        
     }
     const onSubmit = (e) => {
         e.preventDefault()
         const userData = {
-            email: email,
-            password: password,
+            email: inputValues.email,
+            password: inputValues.password,
         }
-        this.props.loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+        loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
     };
     return (
         <div className="container">
@@ -59,14 +61,15 @@ const LoginForm = () => {
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={(e) => setEmail(e.target.value)}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.email||""}
+                                error={errors.error}
                                 id="email"
                                 type="email"
                                 className={classnames('', {
                                     invalid:
                                     errors.email || errors.emailnotfound,
-                                })}
+                                })
+                            }
                             />
                             <label htmlFor="email">Email</label>
                             <span className="red-text">
@@ -77,8 +80,8 @@ const LoginForm = () => {
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={(e) => setPassword(e.target.value)}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.password||""}
+                                error={errors.error}
                                 id="password"
                                 type="password"
                                 className={classnames('', {

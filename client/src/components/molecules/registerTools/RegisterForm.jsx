@@ -35,7 +35,7 @@ const RegisterForm = () => {
 
     const onChange = (e) => {
         e.preventDefault()
-        this.setState({ [e.target.id]: e.target.value })
+        e.setState({ [e.target.id]: e.target.value })
     }
     const onSubmit = (e) => {
         e.preventDefault()

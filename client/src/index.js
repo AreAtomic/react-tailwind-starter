@@ -10,7 +10,7 @@ const rootElement = document.getElementById('root');
 
 
 ReactDOM.render(
-    <Provider store={store} script={console.log("là")}>
+    <Provider store={store}>
             <App />
     </Provider>
 ,
