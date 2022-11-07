@@ -10,7 +10,7 @@ const LoginForm = (login) => {
     const [inputValues, setInputValues] = useState({})
     const [error, setError] = useState({})
 
-    const componentWillReceiveProps = (test) => {
+    const componentWillReceiveProps = () => {
         if (login.auth.isAuthenticated) {
             navigate('/dashboard') // push user to dashboard when they login
         }

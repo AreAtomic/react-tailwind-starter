@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useLocation, useNavigate, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { registerUser } from '../../../actions/authAction'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import classnames from 'classnames'
 
 function withRouter(Component) {
@@ -17,37 +16,37 @@ function withRouter(Component) {
     return ComponentWithRouterProp
 }
 
-const RegisterForm = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmedPassword, setConfirmedPassword] = useState('')
-    const [errors,setError] = useState('');
-
+const RegisterForm = (register) => {
+    const [inputValues, setInputValues] = useState({})
+    const [error, setError] = useState({})
+    let navigate = useNavigate()
     
-    const componentWillReceiveProps = (nextProps) => {
-        if (nextProps.errors) {
-            this.setError({
-                errors: nextProps.errors,
+    const componentWillReceiveProps = () => {
+        if (register.errors) {
+            setError({
+                error: register.errors,
             })
         }
     }
 
     const onChange = (e) => {
         e.preventDefault()
-        e.setState({ [e.target.id]: e.target.value })
+        const id = e.target.id
+        const value = e.target.value
+        setInputValues((values) => ({ ...values, [id]: value }))
     }
     const onSubmit = (e) => {
         e.preventDefault()
+        console.log(register)
 
         const newUser = {
-            name: name,
-            email: email,
-            password: password,
-            confirmedPassword: confirmedPassword,
+            name: inputValues.name,
+            email: inputValues.email,
+            password: inputValues.password,
+            password2: inputValues.password2,
         }
-        this.props.registerUser(newUser, this.props.history)
-
+        register.registerUser(newUser, navigate('/login'))
+        componentWillReceiveProps()
     }
 
 
@@ -77,71 +76,69 @@ const RegisterForm = () => {
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={(e) => setName(e.target.value)}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.name || ''}
+                                error={register.errors}
                                 id="name"
                                 type="text"
                                 className={classnames('', {
                                     invalid:
-                                        errors.name,
+                                        register.errors.name,
                                 })}
                             />
                             <label htmlFor="name">Name</label>
                             <span className="red-text">
-                                {errors.name}
+                                {register.errors.name}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={(e) => setEmail(e.target.value)}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.email || ''}
+                                error={register.errors}
                                 id="email"
                                 type="email"
                                 className={classnames('', {
                                     invalid:
-                                        errors.email,
+                                    register.errors.email,
                                 })}
                             />
                             <label htmlFor="email">Email</label>
                             <span className="red-text">
-                                {errors.email}
+                                {register.errors.email}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={(e) => setPassword(e.target.value)}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.password || ''}
+                                error={register.errors}
                                 id="password"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                        errors
-                                            .password,
+                                    register.errors.password,
                                 })}
                             />
                             <label htmlFor="password">Password</label>
                             <span className="red-text">
-                                {errors.password}
+                                {register.errors.password}
                             </span>
                         </div>
                         <div className="input-field col s12">
                             <input
                                 onChange={onChange}
-                                value={setConfirmedPassword}
-                                error={(e) => setError(e.target.value)}
+                                value={inputValues.password2 || ''}
+                                error={register.errors}
                                 id="password2"
                                 type="password"
                                 className={classnames('', {
                                     invalid:
-                                        errors
-                                            .password2,
+                                    register.errors.password2,
                                 })}
                             />
                             <label htmlFor="password2">Confirm Password</label>
                             <span className="red-text">
-                                {errors.password2}
+                                {register.errors.password2}
                             </span>
                         </div>
                         <div
