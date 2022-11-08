@@ -49,7 +49,7 @@ useEffect(()=>{
         componentWillReceiveProps()
     }
     return (
-        <div className="container">
+        <div className="container" style={{height:'500px'}}>
             <div style={{ marginTop: '4rem' }} className="row">
                 <div className="col s8 offset-s2">
                     <Link to="/" className="btn-flat waves-effect">
