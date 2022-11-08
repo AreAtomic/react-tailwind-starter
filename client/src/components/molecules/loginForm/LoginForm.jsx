@@ -1,5 +1,5 @@
 import { Link,useNavigate } from 'react-router-dom'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { loginUser } from '../../../actions/authAction'
@@ -8,7 +8,7 @@ import classnames from 'classnames'
 const LoginForm = (login) => {
     
     let navigate = useNavigate();
-    
+useEffect(()=>{
     const componentDidMount=()=> {
         // If logged in and user navigates to Login page, should redirect them to dashboard
         if (login.auth.isAuthenticated) {
@@ -16,6 +16,9 @@ const LoginForm = (login) => {
         }
       }
       componentDidMount()
+}
+) 
+    
     const [inputValues, setInputValues] = useState({})
     const [error, setError] = useState({})
 

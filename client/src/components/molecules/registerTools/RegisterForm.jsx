@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Link,useLocation, useNavigate, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -21,13 +21,15 @@ const RegisterForm = (register) => {
     const [error, setError] = useState({})
     let navigate = useNavigate()
 
-    const componentDidMount=()=> {
-        // If logged in and user navigates to Login page, should redirect them to dashboard
-        if (register.auth.isAuthenticated) {
-          navigate("/dashboard");
-        }
-      }
-      componentDidMount()
+    useEffect(()=>{
+        const componentDidMount=()=> {
+            // If logged in and user navigates to Login page, should redirect them to dashboard
+            if (register.auth.isAuthenticated) {
+              navigate("/dashboard");
+            }
+          }
+          componentDidMount()    
+    })
     
     const componentWillReceiveProps = () => {
         if (register.errors) {
