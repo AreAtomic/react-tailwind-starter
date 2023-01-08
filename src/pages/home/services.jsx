@@ -63,7 +63,7 @@ const Services = (props) => {
                             </p>
                         </div>
                         {/* Right side */}
-                        <div className="md:relative hidden">
+                        <div className="hidden md:flex">
                             <img
                                 src={website}
                                 id="rocket"
@@ -75,7 +75,7 @@ const Services = (props) => {
                 <section id="accompagnement-formation">
                     <div className="grid md:grid-cols-2 grid-cols-1 py-20 md:px-10 px-4">
                         {/* Left side */}
-                        <div className="md:relative hidden">
+                        <div className="md:flex hidden">
                             <img
                                 src={accompagnement}
                                 id="rocket"
@@ -179,7 +179,7 @@ const Services = (props) => {
                             </p>
                         </div>
                         {/* Right side */}
-                        <div className="md:relative hidden">
+                        <div className="md:flex hidden">
                             <img
                                 src={outils}
                                 id="rocket"
