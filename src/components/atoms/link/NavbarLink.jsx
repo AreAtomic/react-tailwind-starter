@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { HeadingFive } from '../headings'
 
 export const NavbarLink = (props) => {
-    const location = document.location.href
+    const location = window.location.pathname
+
     return (
         <div id={props.id} className="px-5">
             <Link to={props.href} class="titre">
@@ -10,7 +11,8 @@ export const NavbarLink = (props) => {
                     <b>{props.titre}</b>
                 </HeadingFive>
             </Link>
-            {location.includes(props.href) && (
+            {(location.includes(props.href) ||
+                (props.href === '/accueil' && location === '/')) && (
                 <div
                     id="greenLine"
                     style={{
