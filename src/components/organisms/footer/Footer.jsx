@@ -5,7 +5,7 @@ import {
     Site,
     DernierArticle,
     Reseaux,
-    Form,
+    ContactForm,
 } from '../../molecules'
 
 export const Footer = (props) => {
@@ -24,7 +24,7 @@ export const Footer = (props) => {
                             Nous contacter
                         </HeadingTwo>
                     </div>
-                    <Form />
+                    <ContactForm />
                 </div>
                 {/* <DernierArticle /> */}
             </div>
