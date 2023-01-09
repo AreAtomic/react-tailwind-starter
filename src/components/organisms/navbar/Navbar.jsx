@@ -8,6 +8,7 @@ export const Navbar = (props) => {
                     display: 'flex',
                     alignItems: 'center',
                     textAlign: 'center',
+                    padding: '0 0.5em'
                 }}
             >
                 <LienLogo />

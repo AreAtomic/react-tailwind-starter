@@ -43,8 +43,8 @@ function App() {
                         {/* <Route path="/produits" element={<Produits />} />
                         <Route path="/articles" element={<Articles />} /> */}
                         <Route path="/services" element={<Services />} />
-                        {/* <Route path="/register" element={<Register />} />
-                        <Route path="/login" element={<Login />} /> */}
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
                         <Route path="/dashboard" element={<PrivateRoute />} />
                         {/* <Route path="/build" element={<Build />} /> */}
                     </Routes>

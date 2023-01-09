@@ -44,7 +44,9 @@ const Home = (props) => {
             width: '5vw',
         },
     })
+
     useEffect(() => {
+        const width = window.innerWidth
         setTimeout(() => {
             setStyles({
                 rocket: {
@@ -71,16 +73,17 @@ const Home = (props) => {
                 planetSilver: {
                     position: 'absolute',
                     zIndex: '1',
-                    top: '50%',
+                    top: width > 1100 ?'30%' : '20%',
                     left: '60%',
                     width: '17vw',
                 },
             })
         }, 100)
     }, [])
+    
     return (
         <>
-            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 px-5 w-100">
+            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-100">
                 <Navbar />
                 <div className="grid grid-cols-2 py-10 md:px-10 px-3">
                     {/* Left side */}

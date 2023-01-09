@@ -1,7 +1,7 @@
 export const HeadingOne = (props) => {
     return (
         <h1
-            className={`text-5xl ${props.color || 'text-purple-areatomic-500'}`}
+            className={`text-3xl md:text-5xl ${props.color || 'text-purple-areatomic-500'}`}
         >
             {props.children}
         </h1>
@@ -11,7 +11,7 @@ export const HeadingOne = (props) => {
 export const HeadingTwo = (props) => {
     return (
         <h2
-            className={`text-3xl ${props.color || 'text-purple-areatomic-500'}`}
+            className={`text-2xl md:text-3xl ${props.color || 'text-purple-areatomic-500'}`}
         >
             {props.children}
         </h2>
@@ -21,7 +21,7 @@ export const HeadingTwo = (props) => {
 export const HeadingThree = (props) => {
     return (
         <h3
-            className={`text-2xl ${props.color || 'text-purple-areatomic-500'}`}
+            className={`text-xl md:text-2xl ${props.color || 'text-purple-areatomic-500'}`}
         >
             {props.children}
         </h3>
@@ -30,7 +30,7 @@ export const HeadingThree = (props) => {
 
 export const HeadingFour = (props) => {
     return (
-        <h4 className={`text-xl ${props.color || 'text-purple-areatomic-500'}`}>
+        <h4 className={`text-lg md:text-xl ${props.color || 'text-purple-areatomic-500'}`}>
             {props.children}
         </h4>
     )

@@ -7,17 +7,17 @@ import outils from '../../assets/Outils.svg'
 const Services = (props) => {
     return (
         <>
-            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 px-5">
+            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 grid">
                 <Navbar />
                 <section id="sur-mesure">
-                    <div className="grid md:grid-cols-2 grid-cols-1 py-10 md:px-10 px-4">
+                    <div className="grid md:grid-cols-3 grid-cols-1 py-10 md:px-10 px-4 mx-auto">
                         {/* Left side */}
-                        <div className="mt-10">
+                        <div className="mt-10 col-span-2">
                             <HeadingOne>
                                 Faites <b>décoller</b> votre business avec un
                                 site <b>sur mesure</b>
                             </HeadingOne>
-                            <div className="md:hidden relative">
+                            <div className="md:hidden flex">
                                 <img
                                     src={website}
                                     id="rocket"
@@ -68,31 +68,34 @@ const Services = (props) => {
                                 src={website}
                                 id="rocket"
                                 alt="Votre business sur mesure qui décolle, by areatomic"
+                                className="mx-auto"
                             />
                         </div>
                     </div>
                 </section>
                 <section id="accompagnement-formation">
-                    <div className="grid md:grid-cols-2 grid-cols-1 py-20 md:px-10 px-4">
+                    <div className="grid md:grid-cols-3 grid-cols-1 py-20 md:px-10 px-4">
                         {/* Left side */}
                         <div className="md:flex hidden">
                             <img
                                 src={accompagnement}
                                 id="rocket"
                                 alt="Un accompagnement informatique sur mesure, by areatomic"
+                                className="mx-auto"
                             />
                         </div>
                         {/* Right side */}
-                        <div className="xl:mt-32 lg:mt-20">
+                        <div className="xl:mt-32 lg:mt-20 col-span-2 md:pl-5">
                             <HeadingOne>
                                 Un <b>accompagnement</b> complet et une{' '}
                                 <b>formation</b> continue
                             </HeadingOne>
-                            <div className="md:hidden relative">
+                            <div className="md:hidden flex">
                                 <img
                                     src={accompagnement}
                                     id="rocket"
                                     alt="Un accompagnement informatique sur mesure, by areatomic"
+                                    className="mx-auto"
                                 />
                             </div>
                             <p className="py-3 mt-4 text-purple-areatomic-500">
@@ -134,18 +137,19 @@ const Services = (props) => {
                     </div>
                 </section>
                 <section id="outils">
-                    <div className="grid md:grid-cols-2 grid-cols-1 py-20 md:px-10 px-4">
+                    <div className="grid md:grid-cols-3 grid-cols-1 py-20 md:px-10 px-4">
                         {/* Left side */}
-                        <div className="xl:mt-32 lg:mt-20">
+                        <div className="xl:mt-32 lg:mt-20 col-span-2">
                             <HeadingOne>
                                 Des <b>outils</b> pour vous les{' '}
                                 <b>développeurs</b>
                             </HeadingOne>
-                            <div className="md:hidden relative">
+                            <div className="md:hidden flex">
                                 <img
                                     src={outils}
                                     id="rocket"
                                     alt="Un accompagnement informatique sur mesure, by areatomic"
+                                    className="mx-auto"
                                 />
                             </div>
                             <p className="py-3 mt-4 text-purple-areatomic-500">
@@ -184,6 +188,7 @@ const Services = (props) => {
                                 src={outils}
                                 id="rocket"
                                 alt="Un accompagnement informatique sur mesure, by areatomic"
+                                className="mx-auto"
                             />
                         </div>
                     </div>

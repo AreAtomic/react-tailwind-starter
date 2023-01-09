@@ -6,7 +6,7 @@ import arrow from '../../../assets/arrow-right.svg'
 
 export const CardWithoutImage = (props) => {
     return (
-        <div className="md:w-card-sm max-h-card-sm bg-component-500 rounded px-4 py-4 w-96">
+        <div className="w-96 md:w-card-sm max-w-card max-h-card-sm bg-component-500 rounded px-4 py-4">
             <HeadingTwo color="text-blue-areatomic-500">
                 {props.heading}
             </HeadingTwo>

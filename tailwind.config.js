@@ -626,6 +626,7 @@ module.exports = {
             min: 'min-content',
             max: 'max-content',
             prose: '65ch',
+            card: '93vw',
             ...breakpoints(theme('screens')),
         }),
         minHeight: {

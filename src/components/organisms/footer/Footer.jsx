@@ -18,7 +18,7 @@ export const Footer = (props) => {
                 </div>
                 <Site />
                 <Reseaux />
-                <div id="ContactForm" className='max-w-sm w-screen'>
+                <div id="ContactForm" className='max-w-card md:max-w-sm w-screen'>
                     <div className="py-2">
                         <HeadingTwo color="text-blue-areatomic-500">
                             Nous contacter
