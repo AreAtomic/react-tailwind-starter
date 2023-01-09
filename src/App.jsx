@@ -8,9 +8,37 @@ const Router = () => {
     const authContext = useAuth()
 
     return (
-        <div className='relative'>
-            <div className="absolute">
-                
+        <div className="relative">
+            <div className="absolute w-screenAbsolute grid gap-2 justify-center pt-2">
+                {uxContext.error.length !== 0 &&
+                    uxContext.error.map((error, index) => (
+                        <div className="grid grid-cols-12 w-screen p-3 max-w-card md:max-w-sm bg-red-300 border border-red-500">
+                            <div className="col-span-11">{error}</div>
+                            <div
+                                className="material-icons left"
+                                onClick={() => {
+                                    uxContext.removeError(index)
+                                }}
+                            >
+                                close
+                            </div>
+                        </div>
+                    ))}
+
+                {uxContext.message.length !== 0 &&
+                    uxContext.message.map((message, index) => (
+                        <div className="grid grid-cols-12 w-screen p-3 max-w-card md:max-w-sm bg-green-300 border border-green-500">
+                            <div className="col-span-11">{message}</div>
+                            <div
+                                className="material-icons left"
+                                onClick={() => {
+                                    uxContext.removeMessage(index)
+                                }}
+                            >
+                                close
+                            </div>
+                        </div>
+                    ))}
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />

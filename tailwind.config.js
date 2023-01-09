@@ -887,6 +887,7 @@ module.exports = {
             screen: '100vw',
             min: 'min-content',
             max: 'max-content',
+            screenAbsolute: '98vw',
             // Custom width
             'card-article': '400px',
             'card-product': '400px',

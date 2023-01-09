@@ -17,7 +17,7 @@ export default function UxContextProvider({ children }) {
         const errorStored = sessionStorage.getItem('error')
         if (errorStored) setError(JSON.parse(errorStored))
 
-        const messageStored = sessionStorage.getItem('message')
+        const messageStored = localStorage.getItem('message')
         if (messageStored) setMessage(JSON.parse(message))
 
         return () => {
@@ -27,7 +27,8 @@ export default function UxContextProvider({ children }) {
     }, [])
 
     useEffect(() => {
-        setStorage(error, message)
+        sessionStorage.setItem('error', error)
+        sessionStorage.setItem('message', message)
     }, [error, message])
 
     const handleError = (value) => {
@@ -39,22 +40,22 @@ export default function UxContextProvider({ children }) {
     }
 
     const removeError = (index) => {
-        const copy = error
+        const copy = [...error]
         copy.splice(index, 1)
 
         setError(copy)
     }
 
     const removeMessage = (index) => {
-        const copy = message
+        const copy = [...message]
         copy.splice(index, 1)
 
         setMessage(copy)
     }
 
     const setStorage = (error, message) => {
-        sessionStorage.setItem('error', JSON.stringify(error))
-        sessionStorage.setItem('message', JSON.stringify(message))
+        localStorage.setItem('error', JSON.stringify(error))
+        localStorage.setItem('message', JSON.stringify(message))
     }
 
     return (

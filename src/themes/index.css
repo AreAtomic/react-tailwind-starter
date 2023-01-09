@@ -3,3 +3,7 @@
 /* purgecss end ignore */
 @tailwind screens;
 @tailwind utilities;
+
+html {
+    overflow-x: hidden;
+}

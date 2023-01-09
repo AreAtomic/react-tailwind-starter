@@ -1,6 +1,6 @@
 import axios from 'axios'
 export const proxy = process.env.REACT_APP_PROXY
-export const url = `${proxy}/api`
+export const url = `${proxy}/api/v1`
 
 export const request = async (method, path, body, token, contentType) => {
     const config = {
@@ -38,7 +38,7 @@ export const request = async (method, path, body, token, contentType) => {
             
             return {
                 error: true,
-                data: error.response?.data || error,
+                data: error.response?.data?.message || error.message,
                 disconnected: false,
             }
         })
