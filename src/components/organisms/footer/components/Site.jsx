@@ -1,4 +1,4 @@
-import { HeadingTwo } from '../../atoms/headings'
+import { HeadingTwo } from '../../../atoms'
 import { Link } from 'react-router-dom'
 
 export const Site = (props) => {

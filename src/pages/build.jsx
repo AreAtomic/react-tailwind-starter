@@ -4,8 +4,8 @@ import {
     CardArticle,
     CardWithoutImage,
     HeadingOne,
-} from '../../components/atoms'
-import image from '../../assets/image-product.png'
+} from '../components/atoms'
+import image from '../assets/image-product.png'
 
 const Build = () => {
     return (

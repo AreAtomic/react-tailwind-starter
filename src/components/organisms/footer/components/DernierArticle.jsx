@@ -1,6 +1,5 @@
-import { HeadingTwo } from '../../atoms/headings'
+import { HeadingTwo, ButtonSecondary } from '../../../atoms'
 import { Link } from 'react-router-dom'
-import { ButtonSecondary } from '../../atoms/buttons'
 
 export const DernierArticle = (props) => {
     return (

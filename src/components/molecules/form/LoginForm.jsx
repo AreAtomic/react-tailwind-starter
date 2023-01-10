@@ -12,7 +12,7 @@ const LoginForm = (login) => {
     const uxContext = useUx()
 
     useEffect(() => {
-        if(authContext.isLogged){
+        if(authContext.isLogged === true){
             navigate("/accueil")
         }
     }, [authContext])

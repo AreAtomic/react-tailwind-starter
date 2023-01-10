@@ -1,4 +1,4 @@
-import { HeadingTwo } from '../../atoms/headings'
+import { HeadingTwo } from '../../../atoms'
 
 export const Reseaux = (props) => {
     return (

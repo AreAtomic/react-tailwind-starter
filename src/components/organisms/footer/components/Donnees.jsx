@@ -1,4 +1,4 @@
-import { HeadingTwo } from '../../atoms/headings'
+import { HeadingTwo } from '../../../atoms/headings'
 import { Link } from 'react-router-dom'
 
 export const Donnees = (props) => {

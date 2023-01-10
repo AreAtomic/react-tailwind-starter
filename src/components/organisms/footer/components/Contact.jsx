@@ -1,4 +1,4 @@
-import { HeadingTwo } from '../../atoms/headings'
+import { HeadingTwo } from '../../../atoms/headings'
 
 export const Contact = (props) => {
     return (

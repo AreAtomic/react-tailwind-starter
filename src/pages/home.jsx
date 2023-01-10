@@ -1,16 +1,17 @@
+import { useEffect, useState } from 'react'
+import { HashLink } from 'react-router-hash-link'
+
 import {
     HeadingOne,
     CardWithoutImage,
     ButtonPrimary,
-} from '../../components/atoms'
-import rocket from '../../assets/rocket-3d.png'
-import planetPurple from '../../assets/planet-purple.png'
-import planetGold from '../../assets/planet-gold.png'
-import planetSilver from '../../assets/planet-silver.png'
-import { useEffect, useState } from 'react'
-import { Navbar, Footer } from '../../components/organisms/index'
-import { HashLink } from 'react-router-hash-link'
-import { LoopArticle, LoopProduct } from '../../components/molecules'
+} from '../components/atoms'
+import { Navbar, Footer } from '../components/organisms/index'
+
+import rocket from '../assets/rocket-3d.png'
+import planetPurple from '../assets/planet-purple.png'
+import planetGold from '../assets/planet-gold.png'
+import planetSilver from '../assets/planet-silver.png'
 
 const Home = (props) => {
     // Animations
@@ -73,18 +74,18 @@ const Home = (props) => {
                 planetSilver: {
                     position: 'absolute',
                     zIndex: '1',
-                    top: width > 1100 ?'30%' : '20%',
+                    top: width > 1100 ? '30%' : '20%',
                     left: '60%',
                     width: '17vw',
                 },
             })
         }, 100)
     }, [])
-    
+
     return (
         <>
+            <Navbar />
             <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-100">
-                <Navbar />
                 <div className="grid grid-cols-2 py-10 md:px-10 px-3">
                     {/* Left side */}
                     <div className="w-3/4">
@@ -95,7 +96,6 @@ const Home = (props) => {
                         <div className="mb-6" />
                         <div className="py-5">
                             <HashLink
-                                // example of custom scroll function using the scroll prop
                                 scroll={(el) =>
                                     el.scrollIntoView({ behavior: 'smooth' })
                                 }
@@ -109,7 +109,6 @@ const Home = (props) => {
                         </div>
                         <div className="py-1">
                             <HashLink
-                                // example of custom scroll function using the scroll prop
                                 scroll={(el) =>
                                     el.scrollIntoView({ behavior: 'smooth' })
                                 }
@@ -123,7 +122,6 @@ const Home = (props) => {
                         </div>
                         <div className="py-5">
                             <HashLink
-                                // example of custom scroll function using the scroll prop
                                 scroll={(el) =>
                                     el.scrollIntoView({ behavior: 'smooth' })
                                 }
@@ -178,9 +176,7 @@ const Home = (props) => {
                         </div>
                     </div>
                     <div>
-                        <div id="listeProduits">
-                            <LoopProduct repetition="3" />
-                        </div>
+                        <div id="listeProduits"></div>
                     </div>
                 </section>
                 <section id="articles" className="py-10 px-10 hidden">
@@ -195,9 +191,7 @@ const Home = (props) => {
                         </div>
                     </div>
                     <div>
-                        <div id="listeArticle">
-                            <LoopArticle repetition="3" />
-                        </div>
+                        <div id="listeArticle"></div>
                     </div>
                 </section>
             </div>

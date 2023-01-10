@@ -17,6 +17,7 @@ const AuthContext = React.createContext({
     loading: false,
     register: (email, password, confirmPassword, firstName, lastName) => {},
     loggedIn: (email, password) => {},
+    loggedOut: () => {},
     editProfil: (firstName, lastName) => {},
     request: (method, path, body, callback, contentType) => {},
 })
@@ -32,42 +33,47 @@ export default function AuthContextProvider({ children }) {
     const [type, setType] = useState('user')
     const [token, setToken] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [refreshDone, setRefreshDone] = useState(false)
 
     useEffect(() => {
-        const isLoggedStored = sessionStorage.getItem('isLogged')
-        if (isLoggedStored) setIsLogged(isLoggedStored)
+        const isLoggedStored = localStorage.getItem('isLogged')
+        if (isLoggedStored) setIsLogged(isLoggedStored === 'true')
 
-        const idStored = sessionStorage.getItem('id')
-        if (idStored) setIsLogged(idStored)
+        const idStored = localStorage.getItem('id')
+        if (idStored) setId(idStored)
 
-        const emailStored = sessionStorage.getItem('email')
-        if (emailStored) setIsLogged(emailStored)
+        const emailStored = localStorage.getItem('email')
+        if (emailStored) setEmail(emailStored)
 
-        const usernameStored = sessionStorage.getItem('username')
-        if (usernameStored) setIsLogged(usernameStored)
+        const usernameStored = localStorage.getItem('username')
+        if (usernameStored) setUsername(usernameStored)
 
-        const firstNameStored = sessionStorage.getItem('firstName')
-        if (firstNameStored) setIsLogged(firstNameStored)
+        const firstNameStored = localStorage.getItem('firstName')
+        if (firstNameStored) setFirstName(firstNameStored)
 
-        const lastNameStored = sessionStorage.getItem('lastName')
-        if (lastNameStored) setIsLogged(lastNameStored)
+        const lastNameStored = localStorage.getItem('lastName')
+        if (lastNameStored) setLastName(lastNameStored)
 
-        const typeStored = sessionStorage.getItem('type')
-        if (typeStored) setIsLogged(typeStored)
+        const typeStored = localStorage.getItem('type')
+        if (typeStored) setType(typeStored)
 
-        const tokenStored = sessionStorage.getItem('token')
-        if (tokenStored) setIsLogged(tokenStored)
+        const tokenStored = localStorage.getItem('token')
+        if (tokenStored) setToken(tokenStored)
+
+        setRefreshDone(true)
     }, [])
 
     useEffect(() => {
-        sessionStorage.setItem('isLogged', isLogged)
-        sessionStorage.setItem('id', id)
-        sessionStorage.setItem('email', email)
-        sessionStorage.setItem('username', username)
-        sessionStorage.setItem('firstName', firstName)
-        sessionStorage.setItem('lastName', lastName)
-        sessionStorage.setItem('type', type)
-        sessionStorage.setItem('token', token)
+        if (refreshDone) {
+            localStorage.setItem('isLogged', isLogged)
+            localStorage.setItem('id', id)
+            localStorage.setItem('email', email)
+            localStorage.setItem('username', username)
+            localStorage.setItem('firstName', firstName)
+            localStorage.setItem('lastName', lastName)
+            localStorage.setItem('type', type)
+            localStorage.setItem('token', token)
+        }
     }, [isLogged, id, email, username, firstName, lastName, type, token])
 
     const register = async (
@@ -129,6 +135,21 @@ export default function AuthContextProvider({ children }) {
         setLoading(false)
     }
 
+    const loggedOut = () => {
+        console.log('Logout')
+        setLoading(true)
+
+        setToken(null)
+        setEmail('')
+        setFirstName('')
+        setLastName('')
+        setUsername('')
+        setType('user')
+        setIsLogged(false)
+
+        setLoading(false)
+    }
+
     const editProfil = (firstName, lastName) => {
         console.log(firstName, lastName)
         //TODO: POST /profil/:id
@@ -168,6 +189,7 @@ export default function AuthContextProvider({ children }) {
                 loading: loading,
                 register: register,
                 loggedIn: loggedIn,
+                loggedOut: loggedOut,
                 editProfil: editProfil,
                 request: request,
             }}

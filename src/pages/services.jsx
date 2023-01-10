@@ -1,8 +1,8 @@
-import { HeadingOne } from '../../components/atoms'
-import { Navbar, Footer } from '../../components/organisms/index'
-import website from '../../assets/WebisteSurMesure.svg'
-import accompagnement from '../../assets/Accompagnement.svg'
-import outils from '../../assets/Outils.svg'
+import { HeadingOne } from '../components/atoms'
+import { Navbar, Footer } from '../components/organisms/index'
+import website from '../assets/WebisteSurMesure.svg'
+import accompagnement from '../assets/Accompagnement.svg'
+import outils from '../assets/Outils.svg'
 
 const Services = (props) => {
     return (

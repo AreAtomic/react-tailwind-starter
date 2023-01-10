@@ -1,16 +1,12 @@
 import Build from './build'
-import Home from './home/index'
-import Articles from './home/articles'
-import Produits from './home/produits'
-import Services from './home/services'
-import Register from './home/register'
-import Login from './home/login'
+import Home from './home'
+import Services from './services'
+import Register from './register'
+import Login from './login'
 
 export {
     Build,
     Home,
-    Articles,
-    Produits,
     Services,
     Register,
     Login,

@@ -9,7 +9,7 @@ const Router = () => {
 
     return (
         <div className="relative">
-            <div className="absolute w-screenAbsolute grid gap-2 justify-center pt-2">
+            <div className="fixed w-screenAbsolute grid gap-2 justify-center pt-2 z-50">
                 {uxContext.error.length !== 0 &&
                     uxContext.error.map((error, index) => (
                         <div className="grid grid-cols-12 w-screen p-3 max-w-card md:max-w-sm bg-red-300 border border-red-500">
